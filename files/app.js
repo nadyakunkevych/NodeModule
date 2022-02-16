@@ -35,14 +35,14 @@ fs.mkdir(path.join(__dirname, 'main', 'inPerson'), (err)=>{
 // але щоб ваш файл виглядав як NAME: ім'я з обєкту і т.д і всі пункти з нового рядка.
 
 let onlineUsers = [
-    { name: "Andrii", age: 22, city: "Lviv" },
-    { name: "Oleg", age: 28, city: "Berlin" },
-    { name: "Anna", age: 20, city: "Ternopil" },
+    { name: 'Andrii', age: 22, city: 'Lviv' },
+    { name: 'Oleg', age: 28, city: 'Berlin' },
+    { name: 'Anna', age: 20, city: 'Ternopil' }
 ];
 let inPersonUsers = [
-    { name: "Max", age: 34, city: "Paris" },
-    { name: "Julia", age: 30, city: "Lviv" },
-    { name: "Nazar", age: 18, city: "Lutsk" },
+    { name: 'Max', age: 34, city: 'Paris' },
+    { name: 'Julia', age: 30, city: 'Lviv' },
+    { name: 'Nazar', age: 18, city: 'Lutsk'}
 ];
 
 
