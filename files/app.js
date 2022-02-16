@@ -39,24 +39,37 @@ let onlineUsers = [
     { name: 'Oleg', age: 28, city: 'Berlin' },
     { name: 'Anna', age: 20, city: 'Ternopil' }
 ];
-let inPersonUsers = [
-    { name: 'Max', age: 34, city: 'Paris' },
-    { name: 'Julia', age: 30, city: 'Lviv' },
-    { name: 'Nazar', age: 18, city: 'Lutsk'}
-];
 
+for (let i = 0; i < onlineUsers.length; i++) {
+    for (const onlineUser in onlineUsers [i]) {
 
-fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'file.txt' ),'hello USERS', (err)=> {
-    if (err) {
-        console.log(err);
-        throw err;
+        fs.writeFile(path.join(__dirname, 'main', 'online', 'file.txt'),
+            `${onlineUser} : ${onlineUsers[i][onlineUser]}\n`, {flag: 'a'}, (err) => {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+        })
     }
-})
 
-fs.writeFile(path.join(__dirname, 'main', 'online', 'file.txt' ),'hello ONLINE', (err)=> {
-    if (err) {
-        console.log(err);
-        throw err;
-    }
-})
 
+    let inPersonUsers = [
+        {name: 'Max', age: 34, city: 'Paris'},
+        {name: 'Julia', age: 30, city: 'Lviv'},
+        {name: 'Nazar', age: 18, city: 'Lutsk'}
+    ];
+
+
+    for (let j = 0; j < inPersonUsers.length; j++) {
+            const inPersonUser = inPersonUsers[j];
+
+            fs.writeFile(path.join(__dirname, 'main', 'inPerson', 'file.txt'), `${inPersonUser}: ${inPersonUsers[i][inPersonUser]}\n`,
+                {flag: 'a'},
+                (err) => {
+                if (err) {
+                    console.log(err);
+                    throw err;
+                }
+            })
+        }
+}
